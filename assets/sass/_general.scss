@@ -1,0 +1,26 @@
+@import "./variables";
+
+/* Polices de secours */
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Arial'), local('Helvetica'), sans-serif;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: local('Times New Roman'), local('Times'), serif;
+}
+
+body {
+	max-width: 1920px;
+    margin: 0%;
+	//margin: 1rem 4.5rem 0 4.5rem;
+
+    //background: linear-gradient(90deg, rgba(32,28,100,1) 22%, rgba(67,32,79,1) 51%, rgba(32,28,100,1) 79%);
+}
+* {
+	font-family: 'Playfair Display', sans-serif;
+	font-style: normal;
+    
+}
+

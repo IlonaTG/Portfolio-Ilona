@@ -1,0 +1,67 @@
+@import "./variables";
+
+
+.top-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //position: sticky;
+    //top: 0;
+    //background: transparent;
+    //backdrop-filter: blur(10px);
+    //margin: 0%;
+    height: 4rem;
+    background-color: #566270;
+    width: 100%;
+    padding: 15px 0 15px 25px;
+    //box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+    img{
+        width: 6rem;
+        height: 6rem;
+       
+    }
+    .nav{
+        margin: 0%;
+        ul{
+            display: flex;
+	        list-style-type: none;
+	        font-size: 20px;
+	        margin: 0 4vw 0 0;
+        }
+        li{
+            padding-inline: 20px;
+            position: relative;
+            }
+        
+            
+        a{
+            text-decoration: none;
+	        color: $color-white;
+        }
+        a::before {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            border-radius: 25px;
+            transform: scaleX(0);
+            background: cyan;
+            transform-origin: right;
+            transition: transform 0.3s ease;
+            //width: calc(100% + 40px); // Largeur incluant le padding (20px de chaque côté)
+        //margin-left: -20px; // Déplace le pseudo-élément à gauche pour compenser le padding
+        //transition: transform 0.3s ease, width 0.3s ease;
+            
+        }
+
+        a:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+            width: 100%;
+        
+        }
+
+}
+}

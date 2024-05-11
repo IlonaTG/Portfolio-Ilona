@@ -1,0 +1,53 @@
+#competences{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h3{
+            margin-top: 30px;
+        }
+    .skill {
+        margin-bottom: 10px;
+        .progress {
+            background-color: #f0f0f0;
+            height: 10px;
+            width: 40vw;
+            border-radius: 10px;
+            overflow: hidden;
+            .progress-bar {
+                height: 100%;
+                width: 0;
+                background: linear-gradient(to left, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+                animation: processbar-fill 3s linear forwards;
+                &.html {
+                    width: 90%; 
+                    
+                }
+                &.css {
+                    width: 80%;
+                    
+                }
+                
+                &.javascript {
+                    width: 70%;
+                    
+                }
+                
+                &.react {
+                    width: 70%;
+                
+                }
+                
+                &.redux {
+                    width: 60%; 
+                    
+                }
+                
+            }
+        }
+    }
+}
+    @keyframes processbar-fill {
+        0% { width: 0; }
+        100% { width: var(--percentage); }
+    }
