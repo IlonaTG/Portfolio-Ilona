@@ -1,0 +1,59 @@
+{
+    "projects": [
+      {
+        "id": 0,
+        "title": "Booki",
+        "description": "Créez la page d'accueil d'une agence de voyage avec HTML & CSS",
+        "image": "./assets/images/booki.png",
+        "link": "lien_vers_le_projet1",
+        "categories": ["html-css"]
+      },
+      {
+        "id": 1,
+        "title": "OhMyFood",
+        "description": "Améliorez l'interface d'un site mobile avec des animations CSS",
+        "image": "./assets/images/ohmyfood.png",
+        "link": "lien_vers_le_projet2",
+        "categories": ["html-css"]
+      },
+      {
+        "id": 2,
+        "title": "Sophie Bluel",
+        "description": "Créez une page web dynamique avec JavaScript",
+        "image": "./assets/images/sophie-bluel.png",
+        "link": "lien_vers_le_projet3",
+        "categories": ["html-css", "js"]
+      },
+      {
+        "id": 3,
+        "title": "Kasa",
+        "description": "Créez une application web de location immobilière avec React",
+        "image": "./assets/images/kasa.png",
+        "link": "lien_vers_le_projet4",
+        "categories": ["html-css", "react"]
+      },
+      {
+        "id": 4,
+        "title": "Nina Carducci",
+        "description": "Optimisez le référencement d'un site de photographe",
+        "image": "./assets/images/nina-carducci.png",
+        "link": "lien_vers_le_projet5"
+      },
+      {
+        "id": 5,
+        "title": "724 Events",
+        "description": "Débuggez le site d'une agence d'événementiel",
+        "image": "./assets/images/724events.png",
+        "link": "lien_vers_le_projet6"
+      },
+      {
+        "id": 6,
+        "title": "ArgentBank",
+        "description": "Implémentez le front-end d'une application bancaire avec React",
+        "image": "./assets/images/argentbank.png",
+        "link": "lien_vers_le_projet6",
+        "categories": ["html-css", "react", "redux"]
+      }
+    ]
+  }
+  
