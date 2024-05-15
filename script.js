@@ -29,7 +29,7 @@ function displayProjects(projects) {
                 const overlay = document.createElement('div');
                 overlay.classList.add('overlay');
 
-                const titleElement = document.createElement('h3');
+                const titleElement = document.createElement('h1');
                 titleElement.textContent = project.title;
 
                 const descriptionElement = document.createElement('p');
@@ -37,7 +37,12 @@ function displayProjects(projects) {
 
                 const linkElement = document.createElement('a');
                 linkElement.href = project.link;
-                linkElement.textContent = 'Voir le projet';
+                //linkElement.textContent = 'Voir le projet';
+                if (currentLanguage === 'fr') {
+                    linkElement.textContent = 'Voir le projet';
+                } else if (currentLanguage === 'en') {
+                    linkElement.textContent = 'View project';
+                }
 
                 overlay.appendChild(titleElement);
                 overlay.appendChild(descriptionElement);

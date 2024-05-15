@@ -1,22 +1,41 @@
 #portfolio{
-    h2 {
-        text-align:center;
+    padding: 30px;
+    h4 {
+        color: black; 
+      font-size: 28px; 
+      font-weight: bold; 
+      text-align: center;
     }
-    
     
     .filters{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-    }
-
+        margin: 2rem 0 2rem 0;
+        .filter-btn {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+      
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+        }
 
     .projects-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        margin-bottom: 3rem;
         .project {
             margin: 10px;
             position: relative;
@@ -26,6 +45,7 @@
                 overflow: hidden;
                 width: 25vw;
                 height: 250px;
+                border-radius: 15px;
                 img {
                     width: 100%;
                     height: 100%;
@@ -38,25 +58,25 @@
 
             .overlay {
                 position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                color: #fff;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                opacity: 0;
-                transition: opacity 0.3s ease;
+        bottom: 0; 
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgb(10, 50, 230), rgba(6, 77, 192, 0));
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
 
                 &:hover {
                     opacity: 1;
             
                 }
 
-                h3, p, a {
+                h1, p, a {
                     margin: 0;
                     padding: 10px;
                     text-align: center;

@@ -5,63 +5,99 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //position: sticky;
-    //top: 0;
-    //background: transparent;
-    //backdrop-filter: blur(10px);
-    //margin: 0%;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    margin: 0%;
     height: 4rem;
     background-color: #566270;
     width: 100%;
-    padding: 15px 0 15px 25px;
-    //box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+    z-index: 99999999999;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
     img{
-        width: 6rem;
-        height: 6rem;
-       
+        width: 4rem;
+        height: 4rem;
+        margin-left: 25px;
     }
     .nav{
         margin: 0%;
         ul{
             display: flex;
+            justify-content: center;
+            align-content: center;
 	        list-style-type: none;
 	        font-size: 20px;
 	        margin: 0 4vw 0 0;
-        }
-        li{
-            padding-inline: 20px;
-            position: relative;
+            li{
+                padding-inline: 20px;
+                position: relative;
+                a {
+                    text-decoration: none;
+                    color: $color-white;
+                
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: -3px;
+                        left: 0;
+                        height: 3px;
+                        width: 100%;
+                        border-radius: 25px;
+                        transform: scaleX(0);
+                        background: cyan;
+                        transform-origin: right;
+                        transition: transform 0.3s ease;
+                    }
+                
+                    &:hover::before {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                        width: 100%;
+                    }
+                }
+                
+        
+                .dropdown {
+                    float: right;
+                
+                    &-content {
+                        display: none;
+                        position: absolute;
+                        top: 100%; 
+                        right: 0; 
+                        background-color: #f9f9f9;
+                        min-width: 130px;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                        z-index: 1;
+                
+                        a {
+                            color: black;
+                            padding: 12px 16px;
+                            text-decoration: none;
+                            display: block;
+                            opacity: 0.7;
+                
+                            &:hover {
+                                background-color: #f1f1f1;
+                                opacity: 1;
+                            }
+                            &::before {
+                                visibility: hidden;
+                            }
+                        }
+                    }
+                }
+                
+                &:hover .dropdown-content {
+                    display: block;
+                }
+                
+                
             }
+        }
         
             
-        a{
-            text-decoration: none;
-	        color: $color-white;
-        }
-        a::before {
-            content: "";
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            height: 3px;
-            width: 100%;
-            border-radius: 25px;
-            transform: scaleX(0);
-            background: cyan;
-            transform-origin: right;
-            transition: transform 0.3s ease;
-            //width: calc(100% + 40px); // Largeur incluant le padding (20px de chaque côté)
-        //margin-left: -20px; // Déplace le pseudo-élément à gauche pour compenser le padding
-        //transition: transform 0.3s ease, width 0.3s ease;
-            
-        }
-
-        a:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
-            width: 100%;
         
-        }
-
 }
 }

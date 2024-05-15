@@ -1,13 +1,19 @@
 #competences{
+    background-color: #f8f9fa; 
+    padding: 30px; 
     display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        h3{
-            margin-top: 30px;
-        }
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    h5{
+        color: black; 
+      font-size: 28px; 
+      font-weight: bold; 
+      margin-bottom: 20px;
+    }
     .skill {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         .progress {
             background-color: #f0f0f0;
             height: 10px;

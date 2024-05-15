@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: 'Playfair Display';
+    font-family: 'Roboto';
     src: local('Times New Roman'), local('Times'), serif;
 }
 
@@ -19,8 +19,11 @@ body {
     //background: linear-gradient(90deg, rgba(32,28,100,1) 22%, rgba(67,32,79,1) 51%, rgba(32,28,100,1) 79%);
 }
 * {
-	font-family: 'Playfair Display', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
     
 }
 
+h1, h2, h3, h4, h5, span{
+    font-family: 'Roboto', sans-serif;
+}

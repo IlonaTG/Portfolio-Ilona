@@ -3,23 +3,38 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px;
+    h5{
+        color: black; 
+      font-size: 28px; 
+      font-weight: bold; 
+      margin-bottom: 10px;
+    }
+    p{
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
 
     .contact-form {
         display: flex;
         flex-direction: column;
-        width: 500px; /* Ajustez la largeur selon vos besoins */
+        justify-content: center;
+        align-items: center;
+        width: 500px; 
 
         .form-group {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
 
             &:first-of-type, &:nth-of-type(2) {
                 display: flex;
                 justify-content: space-between;
-                margin-bottom: 10px;
+                align-items: center;
+                margin-bottom: 20px;
+               
 
                 input[type="text"],
                 input[type="email"] {
-                    width: 24vw;
+                    width: 28vw;
                 }
             }
 
@@ -28,23 +43,25 @@
             textarea {
                 width: 31.5vw;
                 padding: 8px;
+                margin: 5px 0 0 0;
                 border: 1px solid #ccc;
                 border-radius: 5px;
             }
 
             textarea {
-                height: 100px; /* Ajustez la hauteur selon vos besoins */
+                height: 100px; 
             }
         }
 
         input[type="submit"] {
-            width: 100%;
+            width: 30%;
             padding: 10px;
             background-color: #007bff;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 14px;
 
             &:hover {
                 background-color: #0056b3;
