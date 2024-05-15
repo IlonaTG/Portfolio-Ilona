@@ -13,7 +13,7 @@
         "title": "OhMyFood",
         "description": "Améliorez l'interface d'un site mobile avec des animations CSS",
         "image": "./assets/images/ohmyfood.png",
-        "link": "lien_vers_le_projet2",
+        "link": "https://ilonatg.github.io/Projet-4/",
         "categories": ["html-css"]
       },
       {
@@ -29,7 +29,7 @@
         "title": "Kasa",
         "description": "Créez une application web de location immobilière avec React",
         "image": "./assets/images/kasa.png",
-        "link": "lien_vers_le_projet4",
+        "link": "https://projet-8-kasa-lac.vercel.app/",
         "categories": ["html-css", "react"]
       },
       {
@@ -37,14 +37,14 @@
         "title": "Nina Carducci",
         "description": "Optimisez le référencement d'un site de photographe",
         "image": "./assets/images/nina-carducci.png",
-        "link": "lien_vers_le_projet5"
+        "link": "https://ninacarducciphotograph-pec2brv2u-ilonatgs-projects.vercel.app/"
       },
       {
         "id": 5,
         "title": "724 Events",
         "description": "Débuggez le site d'une agence d'événementiel",
         "image": "./assets/images/724events.png",
-        "link": "lien_vers_le_projet6"
+        "link": "https://projet-10-724-events-debuggez-une-application-react-js.vercel.app/"
       },
       {
         "id": 6,
