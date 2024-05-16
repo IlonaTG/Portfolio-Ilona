@@ -16,9 +16,9 @@
     #contactIcon {
       display: block; 
       position: fixed;
-      bottom: 230px;
+      bottom: 100px;
       right: 10px;
-      background-color: #007bff;
+      background-color: #006FE6;
       color: #fff;
       padding: 10px;
       border-radius: 50%;
@@ -100,7 +100,7 @@
             input[type="submit"] {
                 width: 60%;
                 padding: 10px;
-                background-color: #007bff;
+                background-color: #006FE6;
                 color: #fff;
                 border: none;
                 border-radius: 5px;
@@ -129,6 +129,7 @@
       visibility: hidden;
       opacity: 0;
       transition: visibility 0.3s, opacity 0.3s;
+      z-index: 7777777777;
   
       &.show {
         visibility: visible;
@@ -140,9 +141,11 @@
         padding: 20px;
         border-radius: 8px;
         width: 90%;
-        height: 630px;
+        height: 560px;
         max-width: 500px;
         position: relative;
+        bottom: -250px;
+        
       }
   
       .close {

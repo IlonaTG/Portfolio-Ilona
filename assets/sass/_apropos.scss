@@ -16,9 +16,13 @@ header {
     .left {
         //margin-right: 7vw;
         width: 44vw;
+        @media (max-width: 768px) {
+          width: 25rem;
+      }
       .apropos-text {
         display: flex;
         flex-direction: column;
+        
   
         h1 {
           margin: 0;
@@ -42,7 +46,7 @@ header {
           margin: 1rem 0 1rem 0;
           padding-bottom: 20px;
           font-size: 1.5em;
-          font-family: 'Montserrat' sans-serif;
+          font-family: 'Montserrat', sans-serif;
           @media (max-width: 768px) {
             font-size: 1em;
         }
@@ -55,7 +59,7 @@ header {
         justify-content: center;
         align-items: center;
   
-        button {
+        .button {
           //width: 12vw;
           padding: 0.6em 1em;
           border: none;
@@ -71,6 +75,7 @@ header {
           touch-action: manipulation;
           margin-right: 20px;
           font-size: 0.8em;
+          text-decoration: none;
   
           &:before {
             content: "";
@@ -165,7 +170,7 @@ header {
     }
   
     p {
-      color: #6c757d; 
+      color: #474E52; 
       font-size: 20px; 
       line-height: 1.6; 
       margin-bottom: 20px; 
@@ -188,7 +193,7 @@ header {
       transition: color 0.3s ease; 
   
       &:hover {
-        color: #007bff;
+        color: #006FE6;
       }
     }
   }

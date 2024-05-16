@@ -89,6 +89,7 @@ fetch('./competences.json')
       const progressBarInnerElement = document.createElement('div');
       progressBarInnerElement.classList.add('progress-bar');
       progressBarInnerElement.style.setProperty('--percentage', `${skill.percentage}%`);
+      progressBarInnerElement.style.width = '0'; // Assurez-vous que la largeur initiale est 0
       progressBarElement.appendChild(progressBarInnerElement);
 
       skillElement.appendChild(nameElement);
@@ -96,10 +97,32 @@ fetch('./competences.json')
 
       skillsContainer.appendChild(skillElement);
     });
+
+    // Observer chaque skillElement une fois qu'ils sont tous ajoutés
+    document.querySelectorAll('.skill').forEach(skillElement => {
+      observer.observe(skillElement);
+    });
   })
   .catch(error => {
     console.error('Une erreur s\'est produite lors du chargement des compétences :', error);
   });
+
+// Intersection Observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progressBars = entry.target.querySelectorAll('.progress-bar');
+      progressBars.forEach(progressBar => {
+        progressBar.style.width = progressBar.style.getPropertyValue('--percentage');
+      });
+      observer.unobserve(entry.target); // Arrêter d'observer une fois l'animation déclenchée
+    }
+  });
+}, {
+  threshold: 0.1 // Ajustez ce seuil si nécessaire
+});
+
+
 
 
 
@@ -149,11 +172,33 @@ fetch('./competences.json')
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        const nav = document.querySelector('.nav ul');
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    });
+  // Gestionnaire pour le bouton du menu
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.nav ul');
+      toggleMenuDisplay(nav);
+  });
+
+  // Gestionnaires pour chaque élément de catégorie du menu
+  const navItems = document.querySelectorAll('.nav ul li a'); // Sélectionne les liens dans les éléments li
+  navItems.forEach(item => {
+      item.addEventListener('click', function() {
+          const nav = document.querySelector('.nav ul');
+          closeMenu(nav);
+          
+      });
+  });
 });
+
+function toggleMenuDisplay(nav) {
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+
+function closeMenu(nav) {
+  nav.style.display = 'none'; // Change toujours le display en 'none' pour fermer le menu
+}
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', function() {

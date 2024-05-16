@@ -24,7 +24,7 @@
                 height: 100%;
                 width: 0;
                 background: linear-gradient(to left, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
-                animation: processbar-fill 3s linear forwards;
+                transition: width 3s linear;
                 &.html {
                     width: 90%; 
                     

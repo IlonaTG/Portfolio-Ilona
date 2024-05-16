@@ -18,6 +18,18 @@
     />
     <link rel="icon" href="./assets/images/favicon1.png" type="icon/png">
     <link rel="stylesheet" href="./assets/sass/style.css" />
+    <!-- Microdonnées Schema.org pour référencement local -->
+	<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "LocalBusiness",
+		  "name": "Ilona Tsivunchyk - développeuse web basée à Paris",
+		  "description": "Ilona Tsivunchyk - développeuse qui a acquis des bases solides en HTML, CSS, JavaScript, et diverses technologies comme React JS, Redux, Node.js, et MongoDB. Durant ma formation, j'ai appris à créer des sites web réactifs, optimisés pour tous types d'appareils, et à mettre en œuvre des stratégies de SEO pour améliorer la visibilité en ligne. Mon expérience inclut le développement d'applications web dynamiques et l'intégration de services backend, ce qui m'a permis de comprendre l'ensemble du cycle de vie du développement web. Je suis particulièrement motivée par les défis techniques et la recherche de solutions innovantes pour offrir des expériences utilisateur optimales. Je suis actuellement à la recherche d'une opportunité d'alternance en développement web pour continuer à perfectionner mes compétences tout en contribuant à des projets passionnants et innovants. ",
+		  "image": "./assets/images/photo-dev.png",
+		  "url": "https://ilonatg.github.io/Portfolio-Ilona/",
+		  "telephone": "+33767507988",
+		}
+		</script>
   </head>
   <body>
     
@@ -31,8 +43,8 @@
                 qui allient innovation, fonctionnalité et design.</p>
             </div>
             <div class="social-links">
-                <a href="./assets/documents/Ilona_Tsivunchyk_CV.pdf" target="_blank">
-                    <button aria-label="Consulter mon CV">Consulter mon CV</button>
+                <a href="./assets/documents/Ilona_Tsivunchyk_CV.pdf" target="_blank" class="button" aria-label="Consulter mon CV">
+                    Consulter mon CV
                 </a>
                 <a href="https://www.linkedin.com/in/ilona-tsivunchyk-7a1173115/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/IlonaTG" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -53,7 +65,7 @@
 				<li><a href="#apropos">À propos</a></li>
 				<li><a href="#portfolio">Portfolio</a></li>
 				<li><a href="#competences">Compétences</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="#contact" class="open-contact-modal" >Contact</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Langue</a>
                     <div class="dropdown-content">
@@ -112,8 +124,38 @@
                 <input type="submit" value="Envoyer" onclick="sendEmail()">
             </form>
         </section>
-        
     </main>
+    <div id="contactIcon" class="contact-icon">
+        <i class="fas fa-envelope"></i>
+    </div>
+    <div id="contactModal" class="contact-modal">
+        <div class="contact-modal-content">
+            <span class="close" onclick="toggleContactModal()">&times;</span>
+            <section id="contactMobile">
+                <h5>Contact me !</h5>
+                <p>Do you have a question or a proposal? Let's discuss it!</p>
+                <form action="#" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sujet">Subject:</label>
+                        <input type="text" name="sujet" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea name="message" cols="30" rows="10" required></textarea>
+                    </div>
+                    <input type="submit" value="Send" onclick="sendEmail()">
+                </form>
+            </section>
+        </div>
+    </div>
     <footer>
         <div class="footer-content">
             <p>Suivez-moi sur les réseaux sociaux et restez à jour avec mes derniers projets.</p>
