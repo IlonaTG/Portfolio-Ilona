@@ -96,8 +96,54 @@
                 
             }
         }
-        
-            
-        
+    }
 }
+
+@media (max-width: 768px) {
+    .top-header {
+        display: block;
+        .nav {
+            ul {
+                display: none; 
+                flex-direction: column;
+                position: fixed;
+                top: 63px;
+                right: 0;
+                width: 150px;
+                background-color: #566270;
+                padding-left: 0px;
+                margin: 0;
+                li {
+                    padding-inline: 0;
+                    a {
+                        padding: 15px 25px;
+                        display: block;
+                    }
+                }
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                cursor: pointer;
+                color: $color-white;
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .top-header {
+        .nav {
+            ul {
+                display: flex !important;
+            }
+            .menu-toggle{
+                display: none;
+            }
+        }
+    }
 }
