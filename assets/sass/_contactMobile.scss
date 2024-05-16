@@ -6,6 +6,10 @@
   #contact {
     display: flex; 
   }
+
+  #contactMobile{
+    display: none;
+  }
   
  
   @media (max-width: 450px) {
@@ -68,7 +72,7 @@
                     input[type="text"],
                     input[type="email"] {
                         //width: 28vw;
-                        width: 18rem;
+                        width: 15rem;
                     
                         
                     }
@@ -78,7 +82,7 @@
                 input[type="email"],
                 textarea {
                     //width: 32.8vw;
-                    width: 13rem;
+                    width: 15rem;
                     padding: 8px;
                     margin: 5px 0 0 0;
                     border: 1px solid #ccc;
@@ -89,11 +93,12 @@
     
                 textarea {
                     height: 100px; 
+                    width: 19rem;
                 }
             }
     
             input[type="submit"] {
-                width: 30%;
+                width: 60%;
                 padding: 10px;
                 background-color: #007bff;
                 color: #fff;
@@ -107,6 +112,7 @@
                 }
             }
         }
+
     }
 }
     // Assurez-vous que la modal de contact est centrée et couvre l'écran

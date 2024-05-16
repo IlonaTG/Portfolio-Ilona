@@ -172,7 +172,6 @@ footer {
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   color: white;
   text-align: center;
-  margin-top: 2rem;
   padding: 30px 0;
   position: relative;
   background-size: 400%;
@@ -694,6 +693,10 @@ header .right .photo-dev img:hover {
   display: flex;
 }
 
+#contactMobile {
+  display: none;
+}
+
 @media (max-width: 450px) {
   #contactIcon {
     display: block;
@@ -751,12 +754,12 @@ header .right .photo-dev img:hover {
   #contactMobile .contact-form .form-group:first-of-type input[type=text],
   #contactMobile .contact-form .form-group:first-of-type input[type=email], #contactMobile .contact-form .form-group:nth-of-type(2) input[type=text],
   #contactMobile .contact-form .form-group:nth-of-type(2) input[type=email] {
-    width: 18rem;
+    width: 15rem;
   }
   #contactMobile .contact-form .form-group input[type=text],
   #contactMobile .contact-form .form-group input[type=email],
   #contactMobile .contact-form .form-group textarea {
-    width: 13rem;
+    width: 15rem;
     padding: 8px;
     margin: 5px 0 0 0;
     border: 1px solid #ccc;
@@ -764,9 +767,10 @@ header .right .photo-dev img:hover {
   }
   #contactMobile .contact-form .form-group textarea {
     height: 100px;
+    width: 19rem;
   }
   #contactMobile .contact-form input[type=submit] {
-    width: 30%;
+    width: 60%;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
