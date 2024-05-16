@@ -5,6 +5,7 @@
       font-size: 28px; 
       font-weight: bold; 
       text-align: center;
+      margin: 10px 0 20px 0;
     }
     
     .filters{
@@ -12,10 +13,10 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        margin: 2rem 0 2rem 0;
+        margin: 0rem 0 2rem 0;
         .filter-btn {
             padding: 10px 20px;
-            margin-right: 10px;
+            margin: 15px 10px 0 10px;
             border: none;
             border-radius: 5px;
             background-color: #007bff;
@@ -37,15 +38,22 @@
         align-items: center;
         margin-bottom: 3rem;
         .project {
-            margin: 10px;
+            margin: 15px;
             position: relative;
-
             .image-container {
                 position: relative;
                 overflow: hidden;
                 width: 25vw;
                 height: 250px;
                 border-radius: 15px;
+                @media (max-width: 759px) {
+                    width: 40vw;
+                }
+                @media (max-width: 600px) {
+                    width: 20rem;
+                }
+               
+                
                 img {
                     width: 100%;
                     height: 100%;
@@ -58,18 +66,18 @@
 
             .overlay {
                 position: absolute;
-        bottom: 0; 
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgb(10, 50, 230), rgba(6, 77, 192, 0));
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
+                bottom: 0; 
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(rgb(10, 50, 230), rgba(6, 77, 192, 0));
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
 
                 &:hover {
                     opacity: 1;
