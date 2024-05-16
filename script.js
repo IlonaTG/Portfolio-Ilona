@@ -7,67 +7,65 @@ fetch('./projects.json')
         console.error('Une erreur s\'est produite lors du chargement des projets :', error);
     });
 
-function displayProjects(projects) {
-    const projectsContainer = document.querySelector('#portfolio .projects-container');
-    const filterButtons = document.querySelectorAll('.filters .filter-btn');
-
-    function filterProjects(categories) {
-        projectsContainer.innerHTML = '';
-
-        projects.forEach(project => {
-            if (categories.includes('all') || (project.categories && categories.some(category => project.categories.includes(category)))) {
-                const projectElement = document.createElement('div');
-                projectElement.classList.add('project');
-
-                const imageContainer = document.createElement('div');
-                imageContainer.classList.add('image-container');
-                const imageElement = document.createElement('img');
-                imageElement.src = project.image;
-                imageElement.alt = project.title;
-                imageContainer.appendChild(imageElement);
-
-                const overlay = document.createElement('div');
-                overlay.classList.add('overlay');
-
-                const titleElement = document.createElement('h1');
-                titleElement.textContent = project.title;
-
-                const descriptionElement = document.createElement('p');
-                descriptionElement.textContent = project.description;
-
-                const linkElement = document.createElement('a');
-                linkElement.href = project.link;
-                //linkElement.textContent = 'Voir le projet';
-                if (currentLanguage === 'fr') {
-                    linkElement.textContent = 'Voir le projet';
-                } else if (currentLanguage === 'en') {
-                    linkElement.textContent = 'View project';
+    function displayProjects(projects) {
+        const projectsContainer = document.querySelector('#portfolio .projects-container');
+        const filterButtons = document.querySelectorAll('.filters .filter-btn');
+    
+        function filterProjects(categories) {
+            projectsContainer.innerHTML = '';
+    
+            projects.forEach(project => {
+                if (categories.includes('all') || (project.categories && categories.some(category => project.categories.includes(category)))) {
+                    const projectElement = document.createElement('div');
+                    projectElement.classList.add('project');
+    
+                    const imageContainer = document.createElement('div');
+                    imageContainer.classList.add('image-container');
+                    const imageElement = document.createElement('img');
+                    imageElement.src = project.image;
+                    imageElement.alt = project.title;
+                    imageContainer.appendChild(imageElement);
+    
+                    const overlay = document.createElement('div');
+                    overlay.classList.add('overlay');
+    
+                    const titleElement = document.createElement('h1');
+                    titleElement.textContent = project.title;
+    
+                    const descriptionElement = document.createElement('p');
+                    descriptionElement.textContent = project.descriptions[currentLanguage] || project.descriptions['fr'];
+    
+                    const linkElement = document.createElement('a');
+                    linkElement.href = project.link;
+                    linkElement.textContent = currentLanguage === 'fr' ? 'Voir le projet' : 'View';
+    
+                    overlay.appendChild(titleElement);
+                    overlay.appendChild(descriptionElement);
+                    overlay.appendChild(linkElement);
+    
+                    imageContainer.appendChild(overlay);
+    
+                    projectElement.appendChild(imageContainer);
+    
+                    projectsContainer.appendChild(projectElement);
                 }
-
-                overlay.appendChild(titleElement);
-                overlay.appendChild(descriptionElement);
-                overlay.appendChild(linkElement);
-
-                imageContainer.appendChild(overlay);
-
-                projectElement.appendChild(imageContainer);
-
-                projectsContainer.appendChild(projectElement);
-            }
+            });
+        }
+    
+        // Ajouter un gestionnaire d'événement à chaque bouton de filtre
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedCategories = [button.dataset.filter];
+                filterProjects(selectedCategories);
+            });
         });
-    };
-
-    // Ajouter un gestionnaire d'événement à chaque bouton de filtre
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedCategories = [button.dataset.filter];
-            filterProjects(selectedCategories);
-        });
-    });
-
-    // Afficher tous les projets par défaut au chargement de la page
-    filterProjects(['all']);
-}
+    
+        // Afficher tous les projets par défaut au chargement de la page
+        filterProjects(['all']);
+    }
+    
+    // Assurez-vous que la variable currentLanguage est définie dans votre HTML
+    
 
 
 
@@ -146,3 +144,38 @@ fetch('./competences.json')
         return emailRegex.test(email);
     }
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const nav = document.querySelector('.nav ul');
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var contactIcon = document.getElementById('contactIcon');
+    var contactModal = document.getElementById('contactModal');
+    var closeModal = document.querySelector('.contact-modal .close');
+
+    contactIcon.addEventListener('click', function() {
+        contactModal.classList.toggle('show');
+    });
+
+    closeModal.addEventListener('click', function() {
+        contactModal.classList.remove('show');
+    });
+
+    // Fermer la modal en cliquant à l'extérieur
+    window.addEventListener('click', function(event) {
+        if (event.target === contactModal) {
+            contactModal.classList.remove('show');
+        }
+    });
+});
+
+
+
