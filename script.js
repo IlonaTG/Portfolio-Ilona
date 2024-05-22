@@ -11,6 +11,37 @@ fetch('./projects.json')
         const projectsContainer = document.querySelector('#portfolio .projects-container');
         const filterButtons = document.querySelectorAll('.filters .filter-btn');
     
+        const modal = document.getElementById("myModal");
+        const modalImage = document.querySelector(".modalImage");
+        const modalDescription = document.querySelector(".modalDescription");
+        const modalLink = document.querySelector(".modalLink");
+        const modalGithub = document.querySelector(".modalGithub");
+        const modalClose = document.querySelector(".close");
+
+        function openModal(project) {
+          modalImage.src = project.imageModal;
+          modalImage.alt = project.imageModalAlt;
+          modalDescription.textContent = currentLanguage === 'fr' ? project.mission.fr : project.mission.en;
+          modalLink.textContent = currentLanguage === 'fr' ? 'Voir le projet' : 'View Project';
+          modalLink.href = project.link;
+          modalGithub.href = project.linkGithub;
+          modal.style.display = "block";
+      }
+
+  
+      function closeModal() {
+          modal.style.display = "none";
+      }
+  
+      modalClose.onclick = closeModal;
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              closeModal();
+          }
+      };
+
+
+
         function filterProjects(categories) {
             projectsContainer.innerHTML = '';
     
@@ -18,6 +49,10 @@ fetch('./projects.json')
                 if (categories.includes('all') || (project.categories && categories.some(category => project.categories.includes(category)))) {
                     const projectElement = document.createElement('div');
                     projectElement.classList.add('project');
+                     // Ajoutez un gestionnaire d'événement pour ouvrir le modal au clic sur le projectElement
+                    projectElement.addEventListener('click', () => {
+                      openModal(project);
+                  });
     
                     const imageContainer = document.createElement('div');
                     imageContainer.classList.add('image-container');
@@ -35,19 +70,22 @@ fetch('./projects.json')
                     const descriptionElement = document.createElement('p');
                     descriptionElement.textContent = project.descriptions[currentLanguage] || project.descriptions['fr'];
     
-                    const linkElement = document.createElement('a');
-                    linkElement.href = project.link;
-                    linkElement.textContent = currentLanguage === 'fr' ? 'Voir le projet' : 'View';
+                    //const linkElement = document.createElement('a');
+                    //linkElement.href = project.link;
+                    //linkElement.textContent = currentLanguage === 'fr' ? 'Voir le projet' : 'View';
     
                     overlay.appendChild(titleElement);
                     overlay.appendChild(descriptionElement);
-                    overlay.appendChild(linkElement);
+                    //overlay.appendChild(linkElement);
     
                     imageContainer.appendChild(overlay);
     
                     projectElement.appendChild(imageContainer);
     
                     projectsContainer.appendChild(projectElement);
+                    imageElement.addEventListener('click', () => {
+                      openModal(project);
+                  });
                 }
             });
         }
@@ -64,19 +102,16 @@ fetch('./projects.json')
         filterProjects(['all']);
     }
     
-    // Assurez-vous que la variable currentLanguage est définie dans votre HTML
-    
 
 
 
-// Récupérer le conteneur des compétences dans le HTML
+// Récupération du conteneur des compétences dans le HTML
 const skillsContainer = document.getElementById('skillsContainer');
 
-// Charger les données depuis le fichier JSON
+// Chargement des données depuis le fichier JSON
 fetch('./competences.json')
   .then(response => response.json())
   .then(data => {
-    // Pour chaque compétence dans les données, créer un élément HTML et l'ajouter au conteneur
     data.competences.forEach(skill => {
       const skillElement = document.createElement('div');
       skillElement.classList.add('skill');
@@ -89,7 +124,7 @@ fetch('./competences.json')
       const progressBarInnerElement = document.createElement('div');
       progressBarInnerElement.classList.add('progress-bar');
       progressBarInnerElement.style.setProperty('--percentage', `${skill.percentage}%`);
-      progressBarInnerElement.style.width = '0'; // Assurez-vous que la largeur initiale est 0
+      progressBarInnerElement.style.width = '0';
       progressBarElement.appendChild(progressBarInnerElement);
 
       skillElement.appendChild(nameElement);
@@ -119,7 +154,7 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, {
-  threshold: 0.1 // Ajustez ce seuil si nécessaire
+  threshold: 0.1 
 });
 
 
@@ -128,45 +163,67 @@ const observer = new IntersectionObserver(entries => {
 
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.contact-form');
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('.contact-form');
+  const notification = document.getElementById('notification');
+  const isEnglish = window.location.pathname.includes('index-en.html');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+  form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
 
-        // Récupérer les valeurs des champs
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const sujet = document.getElementById('sujet').value.trim();
-        const message = document.getElementById('message').value.trim();
+      // Récupération des valeurs des champs
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const sujet = document.getElementById('sujet').value.trim();
+      const message = document.getElementById('message').value.trim();
 
-        // Vérifier si tous les champs sont remplis
-        if (name === '' || email === '' || sujet === '' || message === '') {
-            alert('Veuillez remplir tous les champs.');
-            return;
-        }
-
-        // Vérifier si l'email est valide
-        if (!isValidEmail(email)) {
-            alert('Veuillez saisir une adresse e-mail valide.');
-            return;
-        }
-
-        // Envoi du formulaire
-        const mailtoLink = `mailto:ilona.tsivunchyk@gmail.com?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(message)}`;
-        window.location.href = mailtoLink;
-
-        // Réinitialiser les champs du formulaire
-        form.reset();
-    });
-
-    // Fonction pour valider l'email
-    function isValidEmail(email) {
-        // Utilisez une expression régulière pour valider l'email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+      if (name === '' || email === '' || sujet === '' || message === '') {
+        alert(isEnglish ? 'Please fill out all fields.' : 'Veuillez remplir tous les champs.');
+        return;
     }
+
+    // Vérification si l'email est valide
+    if (!isValidEmail(email)) {
+      alert( isEnglish  ? 'Please enter a valid email address.' : 'Veuillez saisir une adresse e-mail valide.');
+        return;
+    }
+
+      // Envoi du formulaire
+      const mailtoLink = `mailto:ilona.tsivunchyk@gmail.com?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(message)}`;
+      window.location.href = mailtoLink;
+
+      // Réinitialisation des champs du formulaire
+      form.reset();
+      // Affichage de la notification correspondante
+        showNotification(isEnglish ? '🚀 Message sent successfully!' : '🚀 Message envoyé avec succès!');
+    
+  });
+
+  // Fonction pour valider l'email
+  function isValidEmail(email) {
+      const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
+      return emailRegex.test(email);
+  }
+
+
+  // Fonction pour afficher la notification
+  function showNotification(message) {
+    notification.textContent = message;
+    notification.classList.add('show');
+    
+    // Masquer la notification après 3 secondes
+    setTimeout(function() {
+        notification.classList.remove('show');
+        notification.classList.add('hide');
+        
+        // Réinitialiser la classe hide après l'animation
+        setTimeout(function() {
+            notification.classList.remove('hide');
+        }, 500);
+    }, 3000);
+}
 });
+
 
 
 
@@ -177,8 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const nav = document.querySelector('.nav ul');
       toggleMenuDisplay(nav);
   });
-
-  // Gestionnaires pour chaque élément de catégorie du menu
   const navItems = document.querySelectorAll('.nav ul li a'); // Sélectionne les liens dans les éléments li
   navItems.forEach(item => {
       item.addEventListener('click', function() {
@@ -194,7 +249,7 @@ function toggleMenuDisplay(nav) {
 }
 
 function closeMenu(nav) {
-  nav.style.display = 'none'; // Change toujours le display en 'none' pour fermer le menu
+  nav.style.display = 'none';
 }
 
 

@@ -29,7 +29,7 @@
 		  "url": "https://ilonatg.github.io/Portfolio-Ilona/",
 		  "telephone": "+33767507988",
 		}
-		</script>
+	</script>
   </head>
   <body>
     
@@ -51,6 +51,9 @@
             </div>
         </div>
         <div class="right">
+            <div class="logo">
+                <img src="./assets/images/logo.png" alt="Logo Ilona Tsivunchyk">
+            </div>
             <div class="photo-dev">
                 <img src="./assets/images/photo-dev.png" alt="Photo d'Ilona Tsivunchyk">
             </div>
@@ -93,10 +96,20 @@
                 <button class="filter-btn" data-filter="js">JavaScript</button>
                 <button class="filter-btn" data-filter="react">React JS</button>
                 <button class="filter-btn" data-filter="redux">Redux</button>
-            </div>
-		    <div class="projects-container">
-            </div>
-	    </section>
+            </div>    
+                <div class="projects-container"></div>  
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <img class="modalImage" src="" alt="">
+                        <p class="modalDescription"></p>
+                        <div class="modal-buttons">
+                            <a class="modalLink modal-button" target="_blank"></a>
+                            <a class="modalGithub modal-button" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         <section id="competences">
             <h5>Mes compétences</h5>
             <div id="skillsContainer"></div>
@@ -107,22 +120,23 @@
             <form action="#" method="post" class="contact-form">
                 <div class="form-group">
                     <label for="name">Nom:</label>
-                    <input type="text" name="name" id="name" required>
+                    <input type="text" name="name" id="name">
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail:</label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email">
                 </div>
                 <div class="form-group">
                     <label for="sujet">Sujet:</label>
-                    <input type="text" name="sujet" id="sujet" required>
+                    <input type="text" name="sujet" id="sujet">
                 </div>
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
                 </div>
-                <input type="submit" value="Envoyer" onclick="sendEmail()">
+                <input type="submit" value="Envoyer">
             </form>
+            <div id="notification" class="notification"></div>
         </section>
     </main>
     <div id="contactIcon" class="contact-icon">
@@ -132,26 +146,26 @@
         <div class="contact-modal-content">
             <span class="close" onclick="toggleContactModal()">&times;</span>
             <section id="contactMobile">
-                <h5>Contact me !</h5>
-                <p>Do you have a question or a proposal? Let's discuss it!</p>
-                <form action="#" method="post" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail:</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="sujet">Subject:</label>
-                        <input type="text" name="sujet" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea name="message" cols="30" rows="10" required></textarea>
-                    </div>
-                    <input type="submit" value="Send" onclick="sendEmail()">
+                <h5>Contactez-moi !</h5>
+            <p>Vous avez une question ou une proposition ? Discutons-en !</p>
+            <form action="#" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="sujet">Sujet:</label>
+                    <input type="text" name="sujet" id="sujet">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+                <input type="submit" value="Envoyer">
                 </form>
             </section>
         </div>

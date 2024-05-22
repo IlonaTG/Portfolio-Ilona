@@ -1,5 +1,5 @@
 body {
-  max-width: 1920px;
+  width: 100%;
   margin: 0%;
 }
 
@@ -329,12 +329,25 @@ footer .footer-bottom p {
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
+  cursor: pointer;
 }
 #portfolio .projects-container .project {
   margin: 15px;
   position: relative;
+  display: inline-block;
+  animation: appearAnimation 3.5s ease forwards;
 }
-#portfolio .projects-container .project .image-container {
+@keyframes appearAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+#portfolio .projects-container .image-container {
   position: relative;
   overflow: hidden;
   width: 25vw;
@@ -342,16 +355,16 @@ footer .footer-bottom p {
   border-radius: 15px;
 }
 @media (max-width: 759px) {
-  #portfolio .projects-container .project .image-container {
+  #portfolio .projects-container .image-container {
     width: 40vw;
   }
 }
 @media (max-width: 600px) {
-  #portfolio .projects-container .project .image-container {
+  #portfolio .projects-container .image-container {
     width: 20rem;
   }
 }
-#portfolio .projects-container .project .image-container img {
+#portfolio .projects-container .image-container img {
   width: 100%;
   height: 100%;
   display: block;
@@ -360,7 +373,7 @@ footer .footer-bottom p {
   -o-object-position: top center;
      object-position: top center;
 }
-#portfolio .projects-container .overlay {
+#portfolio .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -375,15 +388,15 @@ footer .footer-bottom p {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-#portfolio .projects-container .overlay:hover {
+#portfolio .overlay:hover {
   opacity: 1;
 }
-#portfolio .projects-container .overlay h1, #portfolio .projects-container .overlay p, #portfolio .projects-container .overlay a {
+#portfolio .overlay h1, #portfolio .overlay p, #portfolio .overlay a {
   margin: 0;
   padding: 10px;
   text-align: center;
 }
-#portfolio .projects-container .overlay a {
+#portfolio .overlay a {
   color: #fff;
   text-decoration: none;
   background-color: #006FE6;
@@ -391,7 +404,69 @@ footer .footer-bottom p {
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
-#portfolio .projects-container .overlay a:hover {
+#portfolio .overlay a:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal .modal-content {
+  background-color: #fdfdfd;
+  margin: 10% auto;
+  padding: 30px;
+  border: 1px solid #888;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 900px;
+  height: 500px;
+  position: relative;
+}
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal .close:hover, .modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal p {
+  color: black;
+  font-size: 18px;
+  margin: 40px 40px;
+  text-align: center;
+}
+.modal .modal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-buttons .modal-button {
+  margin: 3rem 1.5rem 1rem 0;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  width: 6vw;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  text-align: center;
+  background-color: #006FE6;
+  transition: background-color 0.3s ease;
+}
+.modal .modal-buttons .modal-button:hover {
   background-color: #0056b3;
 }
 
@@ -403,7 +478,7 @@ header {
   color: white;
   text-align: center;
   position: relative;
-  height: 38rem;
+  height: 42.1rem;
   background-size: 400%;
   animation: gradient 15s ease infinite;
   width: 100%;
@@ -511,6 +586,7 @@ header .left .social-links i .fa-brands {
 }
 header .right {
   margin-top: 0%;
+  display: flex;
 }
 @media (max-width: 668px) {
   header .right {
@@ -518,8 +594,9 @@ header .right {
   }
 }
 header .right .photo-dev {
-  height: 39.5rem;
+  height: 42.1rem;
   perspective: 1000px;
+  position: relative;
 }
 header .right .photo-dev img {
   width: 100%;
@@ -529,8 +606,19 @@ header .right .photo-dev img {
   overflow: hidden;
 }
 header .right .photo-dev img:hover {
-  transform: rotateY(15deg) rotateX(15deg);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.8));
+  transform: scale(1.1);
+}
+header .right .logo {
+  position: absolute;
+  right: 3em;
+  top: -1em;
+  width: 16rem;
+  height: 16rem;
+}
+header .right .logo img {
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes glowing-button {
@@ -757,7 +845,7 @@ header .right .photo-dev img:hover {
   #contactMobile .contact-form .form-group input[type=text],
   #contactMobile .contact-form .form-group input[type=email],
   #contactMobile .contact-form .form-group textarea {
-    width: 15rem;
+    width: 19rem;
     padding: 8px;
     margin: 5px 0 0 0;
     border: 1px solid #ccc;
@@ -816,4 +904,41 @@ header .right .photo-dev img:hover {
   right: 10px;
   font-size: 24px;
   cursor: pointer;
+}
+
+.notification {
+  position: fixed;
+  top: 75%;
+  right: 40vw;
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: visibility 0s, opacity 0.5s ease, transform 0.5s ease;
+}
+.notification.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.notification.hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: visibility 0s 0.5s, opacity 0.5s ease, transform 0.5s ease;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }/*# sourceMappingURL=style.css.map */
