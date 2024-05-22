@@ -128,17 +128,17 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.5);
-            
+            z-index: 999999999999999999;
           
             .modal-content {
               background-color: #fdfdfd;
-              margin: 10% auto;
+              margin: 7rem auto;
               padding: 30px;
               border: 1px solid #888;
               border-radius: 15px;
               width: 80%;
               max-width: 900px;
-              height: 500px;
+              //height: 500px;
               position: relative;
               
             }
@@ -159,8 +159,9 @@
             p{
                 color: black;
                 font-size: 18px;
-                margin: 40px 40px;
+                margin: 40px 0;
                 text-align: center;
+                line-height: 1.6;
             }
           
             .modal-buttons {
@@ -169,11 +170,11 @@
               justify-content: center;
               align-items: center;
               .modal-button{
-                margin: 3rem 1.5rem 1rem 0;
+                margin: 1rem 1.5rem 1rem 0;
                 cursor: pointer;
                 color: #fff;
                 text-decoration: none;
-                width: 6vw;
+                width: 90px;
                 padding: 8px 16px;
                 border-radius: 5px;
                 font-size: 13px;

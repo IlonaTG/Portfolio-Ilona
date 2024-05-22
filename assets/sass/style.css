@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, span {
   justify-content: center;
   align-content: center;
   list-style-type: none;
-  font-size: 20px;
+  font-size: 1.7vw;
   margin: 0 4vw 0 0;
 }
 .top-header .nav ul li {
@@ -418,16 +418,16 @@ footer .footer-bottom p {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000000000000000000;
 }
 .modal .modal-content {
   background-color: #fdfdfd;
-  margin: 10% auto;
+  margin: 7rem auto;
   padding: 30px;
   border: 1px solid #888;
   border-radius: 15px;
   width: 80%;
   max-width: 900px;
-  height: 500px;
   position: relative;
 }
 .modal .close {
@@ -444,8 +444,9 @@ footer .footer-bottom p {
 .modal p {
   color: black;
   font-size: 18px;
-  margin: 40px 40px;
+  margin: 40px 0;
   text-align: center;
+  line-height: 1.6;
 }
 .modal .modal-buttons {
   display: flex;
@@ -454,11 +455,11 @@ footer .footer-bottom p {
   align-items: center;
 }
 .modal .modal-buttons .modal-button {
-  margin: 3rem 1.5rem 1rem 0;
+  margin: 1rem 1.5rem 1rem 0;
   cursor: pointer;
   color: #fff;
   text-decoration: none;
-  width: 6vw;
+  width: 90px;
   padding: 8px 16px;
   border-radius: 5px;
   font-size: 13px;
