@@ -16,7 +16,7 @@
     #contactIcon {
       display: block; 
       position: fixed;
-      bottom: 100px;
+      bottom: 300px;
       right: 10px;
       background-color: #006FE6;
       color: #fff;
@@ -141,10 +141,11 @@
         padding: 20px;
         border-radius: 8px;
         width: 90%;
-        height: 560px;
+        //height: 560px;
+        height: auto;
         max-width: 500px;
         position: relative;
-        bottom: -250px;
+        top: 8%;
         
       }
   
