@@ -39,21 +39,22 @@
         margin-bottom: 3rem;
         cursor: pointer;
         .project {
-            margin: 15px;
-            position: relative;
-            display: inline-block;
-            animation: appearAnimation 3.5s ease forwards; 
-        }
-            @keyframes appearAnimation {
-              from {
-                  opacity: 0;
-                  transform: translateY(-40px); 
-              to {
-                  opacity: 1;
-                  transform: translateY(0); 
-              }
+          margin: 15px;
+          position: relative;
+          display: inline-block;
+          animation: appearAnimation 3.5s ease forwards; 
+      }
+          @keyframes appearAnimation {
+            from {
+                opacity: 0;
+                transform: translateY(-40px); 
+            to {
+                opacity: 1;
+                transform: translateY(0); 
             }
           }
+        }
+      
             .image-container {
                 position: relative;
                 overflow: hidden;
