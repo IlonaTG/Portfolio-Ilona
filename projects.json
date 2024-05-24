@@ -12,8 +12,8 @@
             "en": "The mission of this project is to create the homepage of a travel agency using HTML and CSS, while integrating a responsive interface. Figma mockups for mobile, tablet, and desktop, as well as images, have been provided to guide development. The goal was to create interface components that match the mockup, allowing me to develop skills in responsive design and ensure that the page works well on all devices. These skills are crucial for becoming a competent front-end developer in modern web development."
           },
           "image": "./assets/images/booki.webp",
-          "imageModal": "./assets/images/bookilogo.webp",
-          "imageModalAlt": "Logo Booki",
+          "imageModal": ["./assets/images/logosDev/logoHTML.png", "./assets/images/logosDev/logoCSS.png", "./assets/images/logosDev/logoFigma.png", "./assets/images/logosDev/logoResponsive.png", "./assets/images/logosDev/logoGitHub.png "],
+          "imageModalAlt": "Logos Languages",
           "link": "https://booki-yyyg.vercel.app/",
           "linkGithub": "https://github.com/IlonaTG/Booki.git",
           "categories": ["html-css"]
@@ -30,8 +30,8 @@
             "en": "The mission of this project was to integrate a mobile-first mockup for a start-up's website using Sass to organize and optimize the CSS. I implemented CSS animations to enhance the user experience and versioned the project with Git and GitHub. This project allowed me to understand the importance of designing adaptive and responsive websites, while familiarizing myself with essential tools for managing and collaborating on web development projects."
           },
           "image": "./assets/images/ohmyfood.webp",
-          "imageModal": "./assets/images/ohmyfoodlogo.webp",
-          "imageModalAlt": "Logo Ohmyfood",
+          "imageModal": ["./assets/images/logosDev/logoHTML.png", "./assets/images/logosDev/logoCSS.png", "./assets/images/logosDev/logoSASS.png", "./assets/images/logosDev/logoFigma.png", "./assets/images/logosDev/logoResponsive.png", "./assets/images/logosDev/logoGitHub.png " ],
+          "imageModalAlt": "Logos Languages",
           "link": "https://ilonatg.github.io/Projet-4/",
           "linkGithub": "https://github.com/IlonaTG/Projet-4.git",
           "categories": ["html-css"]
@@ -48,8 +48,8 @@
             "en": "The mission of this project was to create a dynamic web page for an interior designer's website using JavaScript and communicating with an API. I developed the front-end, including a portfolio page, an admin login page, and a modal for uploading new media. This project allowed me to manage user events, manipulate the DOM, and test functionalities by communicating with a back-end."
           },
           "image": "./assets/images/sophie-bluel.webp",
-          "imageModal": "./assets/images/logoSophieBluel.webp",
-          "imageModalAlt": "Logo Sophie Bluel",
+          "imageModal": ["./assets/images/logosDev/logoHTML.png", "./assets/images/logosDev/logoCSS.png", "./assets/images/logosDev/logoJS.png ", "./assets/images/logosDev/logoNode.png", "./assets/images/logosDev/logoAPI.png", "./assets/images/logosDev/logoFigma.png", "./assets/images/logosDev/logoResponsive.png", "./assets/images/logosDev/logoGitHub.png " ],
+          "imageModalAlt": "Logos Languages",
           "link": "lien_vers_le_projet3",
           "linkGithub": "https://github.com/IlonaTG/P6.git",
           "categories": ["html-css", "js"]
@@ -66,8 +66,8 @@
             "en": "The mission of this project was to implement the front-end of an application using React and React Router to create a modern and responsive user experience. I developed the data presentation logic and React components, configured navigation between different pages with React Router, and used simulated data extracted from a JSON file. This project allowed me to master essential tools for developing dynamic and responsive web applications."
           },
           "image": "./assets/images/kasa.webp",
-          "imageModal": "./assets/images/logoKasa.webp",
-          "imageModalAlt": "Logo Kasa",
+          "imageModal": ["./assets/images/logosDev/logoHTML.png", "./assets/images/logosDev/logoCSS.png", "./assets/images/logosDev/logoJS.png ", "./assets/images/logosDev/logoReact.png ", "./assets/images/logosDev/logoSASS.png", "./assets/images/logosDev/logoFigma.png", "./assets/images/logosDev/logoResponsive.png", "./assets/images/logosDev/logoGitHub.png " ],
+          "imageModalAlt": "Logos Languages",
           "link": "https://projet-8-kasa-lac.vercel.app/",
           "linkGithub": "https://github.com/IlonaTG/Projet-8-Kasa.git",
           "categories": ["html-css", "react"]
@@ -84,8 +84,8 @@
             "en": "The mission of this project was to optimize the SEO of a website by improving its performance and accessibility. This involved identifying loading and SEO issues, providing recommendations for improvement, implementing these enhancements by modifying the site's code, and finally creating a report detailing the results before and after the modifications. These skills are crucial for enhancing the visibility, accessibility, and user experience of a website, which is essential in web development."
           },
           "image": "./assets/images/nina-carducci.webp",
-          "imageModal": "./assets/images/logoNinaCarducci.webp",
-          "imageModalAlt": "Logo Nina Carducci",
+          "imageModal": ["./assets/images/logosDev/logoHTML.png", "./assets/images/logosDev/logoCSS.png", "./assets/images/logosDev/logoJS.png ", "./assets/images/logosDev/logoSEO.png", "./assets/images/logosDev/logoWave.png", "./assets/images/logosDev/logoResponsive.png", "./assets/images/logosDev/logoGitHub.png " ],
+          "imageModalAlt": "Logos Languages",
           "link": "https://ninacarducciphotograph-pec2brv2u-ilonatgs-projects.vercel.app/",
           "linkGithub": "https://github.com/IlonaTG/Projet_9_optimiser_le_referencement_du_site_de_nina_carducci_photographe.git"
       },
@@ -103,8 +103,8 @@
             "en": "The mission of this project was to develop the front-end of a banking application using React and Redux to create a dynamic user experience. This involved integrating the front-end with the back-end through API calls, writing REST API calls to ensure smooth communication, and developing a reactive and comprehensive user interface with React. The use of Redux enabled consistent data management across the application. The objective was also to define API access points and model interactions with transaction data using Swagger, while gaining practical experience with Node.js for full-stack application management."
           },
           "image": "./assets/images/argentbank.webp",
-          "imageModal": "./assets/images/logoArgentBank.webp",
-          "imageModalAlt": "Logo ArgentBank",
+          "imageModal": ["./assets/images/logosDev/logoHTML.png", "./assets/images/logosDev/logoCSS.png", "./assets/images/logosDev/logoJS.png ", "./assets/images/logosDev/logoReact.png ", "./assets/images/logosDev/logoRedux.png", "./assets/images/logosDev/logoAPI.png", "./assets/images/logosDev/logoSwagger.png", "./assets/images/logosDev/logoSASS.png", "./assets/images/logosDev/logoResponsive.png", "./assets/images/logosDev/logoGitHub.png" ],
+          "imageModalAlt": "Logos Languages",
           "link": "lien_vers_le_projet6",
           "linkGithub": "https://github.com/IlonaTG/Projet11-ArgentBank-website.git",
           "categories": ["html-css", "react", "redux"]
