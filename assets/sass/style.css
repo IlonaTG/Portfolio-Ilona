@@ -41,8 +41,13 @@ h1, h2, h3, h4, h5, span {
   justify-content: center;
   align-content: center;
   list-style-type: none;
-  font-size: 1.7vw;
-  margin: 0 4vw 0 0;
+  font-size: 1.2rem;
+  margin: 0 25px 0 0;
+}
+@media (max-width: 940px) {
+  .top-header .nav ul {
+    font-size: 1.7vw;
+  }
 }
 .top-header .nav ul li {
   padding-inline: 20px;
