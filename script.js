@@ -1,3 +1,4 @@
+//CHARGEMENT DE PROJETS
 fetch('./projects.json')
     .then(response => response.json())
     .then(data => {
@@ -40,8 +41,7 @@ fetch('./projects.json')
           }
       };
 
-
-
+//FILTRES
         function filterProjects(categories) {
             projectsContainer.innerHTML = '';
     
@@ -49,7 +49,7 @@ fetch('./projects.json')
                 if (categories.includes('all') || (project.categories && categories.some(category => project.categories.includes(category)))) {
                     const projectElement = document.createElement('div');
                     projectElement.classList.add('project');
-                     // Ajoutez un gestionnaire d'événement pour ouvrir le modal au clic sur le projectElement
+                     // Ajout d'un gestionnaire d'événement pour ouvrir le modal au clic sur le projectElement
                     projectElement.addEventListener('click', () => {
                       openModal(project);
                   });
@@ -70,13 +70,8 @@ fetch('./projects.json')
                     const descriptionElement = document.createElement('p');
                     descriptionElement.textContent = project.descriptions[currentLanguage] || project.descriptions['fr'];
     
-                    //const linkElement = document.createElement('a');
-                    //linkElement.href = project.link;
-                    //linkElement.textContent = currentLanguage === 'fr' ? 'Voir le projet' : 'View';
-    
                     overlay.appendChild(titleElement);
                     overlay.appendChild(descriptionElement);
-                    //overlay.appendChild(linkElement);
     
                     imageContainer.appendChild(overlay);
     
@@ -90,7 +85,7 @@ fetch('./projects.json')
             });
         }
     
-        // Ajouter un gestionnaire d'événement à chaque bouton de filtre
+        // Ajout  d'un gestionnaire d'événement à chaque bouton de filtre
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const selectedCategories = [button.dataset.filter];
@@ -98,12 +93,12 @@ fetch('./projects.json')
             });
         });
     
-        // Afficher tous les projets par défaut au chargement de la page
+        // Affichage de tous les projets par défaut au chargement de la page
         filterProjects(['all']);
     }
 
 
-// Récupération du conteneur des compétences dans le HTML
+//SKILLS
 const skillsContainer = document.getElementById('skillsContainer');
 
 // Chargement des données depuis le fichier JSON
@@ -131,7 +126,7 @@ fetch('./competences.json')
       skillsContainer.appendChild(skillElement);
     });
 
-    // Observer chaque skillElement une fois qu'ils sont tous ajoutés
+    // Observation de chaque skillElement une fois qu'ils sont tous ajoutés
     document.querySelectorAll('.skill').forEach(skillElement => {
       observer.observe(skillElement);
     });
@@ -148,7 +143,7 @@ const observer = new IntersectionObserver(entries => {
       progressBars.forEach(progressBar => {
         progressBar.style.width = progressBar.style.getPropertyValue('--percentage');
       });
-      observer.unobserve(entry.target); // Arrêter d'observer une fois l'animation déclenchée
+      observer.unobserve(entry.target); 
     }
   });
 }, {
@@ -156,11 +151,7 @@ const observer = new IntersectionObserver(entries => {
 });
 
 
-
-
-
-
-
+//CONTACT FORM
 document.addEventListener('DOMContentLoaded', function() {
   const forms = document.querySelectorAll('.contact-form');
   const notification = document.getElementById('notification');
@@ -250,8 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-
+//HUMBURGER EN VERSION MOBILE
 document.addEventListener('DOMContentLoaded', function() {
   // Gestionnaire pour le bouton du menu
   document.querySelector('.menu-toggle').addEventListener('click', function() {
@@ -276,10 +266,7 @@ function closeMenu(nav) {
   nav.style.display = 'none';
 }
 
-
-
-
-
+//CONTACT FORM EN VERSION MOBILE
 document.addEventListener('DOMContentLoaded', function() {
     var contactIcon = document.getElementById('contactIcon');
     var contactModal = document.getElementById('contactModal');
