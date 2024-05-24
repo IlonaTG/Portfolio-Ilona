@@ -156,6 +156,19 @@
                 cursor: pointer;
               }
             }
+
+            .modalImageContainer {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              justify-content: center;
+              align-content: center;
+            img {
+              max-width: 100%;
+              height: auto;
+              margin: 0 2vw 10px 0;
+            }
+          }
         
             p{
                 color: black;

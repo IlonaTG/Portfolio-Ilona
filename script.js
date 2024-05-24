@@ -13,33 +13,42 @@ fetch('./projects.json')
         const filterButtons = document.querySelectorAll('.filters .filter-btn');
     
         const modal = document.getElementById("myModal");
-        const modalImage = document.querySelector(".modalImage");
-        const modalDescription = document.querySelector(".modalDescription");
-        const modalLink = document.querySelector(".modalLink");
-        const modalGithub = document.querySelector(".modalGithub");
-        const modalClose = document.querySelector(".close");
+const modalImageContainer = document.querySelector(".modalImageContainer"); // Modifié pour contenir plusieurs images
+const modalDescription = document.querySelector(".modalDescription");
+const modalLink = document.querySelector(".modalLink");
+const modalGithub = document.querySelector(".modalGithub");
+const modalClose = document.querySelector(".close");
 
-        function openModal(project) {
-          modalImage.src = project.imageModal;
-          modalImage.alt = project.imageModalAlt;
-          modalDescription.textContent = currentLanguage === 'fr' ? project.mission.fr : project.mission.en;
-          modalLink.textContent = currentLanguage === 'fr' ? 'Voir le projet' : 'View Project';
-          modalLink.href = project.link;
-          modalGithub.href = project.linkGithub;
-          modal.style.display = "block";
-      }
+function openModal(project) {
+    // Effacer les images précédentes
+    modalImageContainer.innerHTML = '';
 
-  
-      function closeModal() {
-          modal.style.display = "none";
-      }
-  
-      modalClose.onclick = closeModal;
-      window.onclick = function(event) {
-          if (event.target == modal) {
-              closeModal();
-          }
-      };
+    // Ajouter chaque image du tableau au conteneur
+    project.imageModal.forEach(imageSrc => {
+        const imageElement = document.createElement('img');
+        imageElement.src = imageSrc;
+        imageElement.alt = project.imageModalAlt;
+        modalImageContainer.appendChild(imageElement);
+    });
+
+    modalDescription.textContent = currentLanguage === 'fr' ? project.mission.fr : project.mission.en;
+    modalLink.textContent = currentLanguage === 'fr' ? 'Voir le projet' : 'View Project';
+    modalLink.href = project.link;
+    modalGithub.href = project.linkGithub;
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+modalClose.onclick = closeModal;
+window.onclick = function(event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+};
+
 
 //FILTRES
         function filterProjects(categories) {

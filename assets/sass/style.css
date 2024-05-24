@@ -446,6 +446,18 @@ footer .footer-bottom p {
   text-decoration: none;
   cursor: pointer;
 }
+.modal .modalImageContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.modal .modalImageContainer img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 2vw 10px 0;
+}
 .modal p {
   color: black;
   font-size: 18px;
