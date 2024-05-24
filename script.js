@@ -101,8 +101,6 @@ fetch('./projects.json')
         // Afficher tous les projets par défaut au chargement de la page
         filterProjects(['all']);
     }
-    
-
 
 
 // Récupération du conteneur des compétences dans le HTML
@@ -164,39 +162,67 @@ const observer = new IntersectionObserver(entries => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('.contact-form');
+  const forms = document.querySelectorAll('.contact-form');
   const notification = document.getElementById('notification');
   const isEnglish = window.location.pathname.includes('index-en.html');
 
-  form.addEventListener('submit', function(event) {
-      event.preventDefault(); 
+  forms.forEach(form => {
+      form.addEventListener('submit', function(event) {
+          event.preventDefault(); 
 
-      // Récupération des valeurs des champs
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const sujet = document.getElementById('sujet').value.trim();
-      const message = document.getElementById('message').value.trim();
+          // Récupération des valeurs des champs
+          const name = form.querySelector('#name').value.trim();
+          const email = form.querySelector('#email').value.trim();
+          const sujet = form.querySelector('#sujet').value.trim();
+          const message = form.querySelector('#message').value.trim();
 
-      if (name === '' || email === '' || sujet === '' || message === '') {
-        alert(isEnglish ? 'Please fill out all fields.' : 'Veuillez remplir tous les champs.');
-        return;
-    }
+          if (name === '' || email === '' || sujet === '' || message === '') {
+              alert(isEnglish ? 'Please fill out all fields.' : 'Veuillez remplir tous les champs.');
+              return;
+          }
 
-    // Vérification si l'email est valide
-    if (!isValidEmail(email)) {
-      alert( isEnglish  ? 'Please enter a valid email address.' : 'Veuillez saisir une adresse e-mail valide.');
-        return;
-    }
+          // Vérification si l'email est valide
+          if (!isValidEmail(email)) {
+              alert(isEnglish ? 'Please enter a valid email address.' : 'Veuillez saisir une adresse e-mail valide.');
+              return;
+          }
 
-      // Envoi du formulaire
-      const mailtoLink = `mailto:ilona.tsivunchyk@gmail.com?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(message)}`;
-      window.location.href = mailtoLink;
+          const formData = new FormData(form);
+          const object = Object.fromEntries(formData);
+          const json = JSON.stringify(object);
 
-      // Réinitialisation des champs du formulaire
-      form.reset();
-      // Affichage de la notification correspondante
-        showNotification(isEnglish ? '🚀 Message sent successfully!' : '🚀 Message envoyé avec succès!');
-    
+          notification.textContent = isEnglish ? 'Please wait...' : 'Veuillez patienter...';
+          notification.classList.add('show');
+
+          fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+              },
+              body: json
+          })
+          .then(async (response) => {
+              let json = await response.json();
+              if (response.status == 200) {
+                  notification.textContent = json.message;
+              } else {
+                  console.log(response);
+                  notification.textContent = json.message;
+              }
+          })
+          .catch(error => {
+              console.log(error);
+              notification.textContent = isEnglish ? 'Something went wrong!' : 'Une erreur s\'est produite!';
+          })
+          .then(function() {
+              form.reset();
+              showNotification(isEnglish ? '🚀 Message sent successfully!' : '🚀 Message envoyé avec succès!', notification);
+              setTimeout(() => {
+                contactModal.classList.remove('show');
+            }, 1000);
+            });
+      });
   });
 
   // Fonction pour valider l'email
@@ -205,25 +231,23 @@ document.addEventListener('DOMContentLoaded', function() {
       return emailRegex.test(email);
   }
 
-
   // Fonction pour afficher la notification
   function showNotification(message) {
-    notification.textContent = message;
-    notification.classList.add('show');
-    
-    // Masquer la notification après 3 secondes
-    setTimeout(function() {
-        notification.classList.remove('show');
-        notification.classList.add('hide');
-        
-        // Réinitialiser la classe hide après l'animation
-        setTimeout(function() {
-            notification.classList.remove('hide');
-        }, 500);
-    }, 3000);
-}
+      notification.textContent = message;
+      notification.classList.add('show');
+      
+      // Masquer la notification après 3 secondes
+      setTimeout(function() {
+          notification.classList.remove('show');
+          notification.classList.add('hide');
+          
+          // Réinitialiser la classe hide après l'animation
+          setTimeout(function() {
+              notification.classList.remove('hide');
+          }, 500);
+      }, 3000);
+  }
 });
-
 
 
 
@@ -276,6 +300,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
 
 
 

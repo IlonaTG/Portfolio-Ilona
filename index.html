@@ -117,7 +117,8 @@
         <section id="contact">
             <h5>Contactez-moi !</h5>
             <p>Vous avez une question ou une proposition ? Discutons-en !</p>
-            <form action="#" method="post" class="contact-form">
+            <form method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="3ba43cdd-433d-4930-ade3-2cd6963d332e">
                 <div class="form-group">
                     <label for="name">Nom:</label>
                     <input type="text" name="name" id="name">
@@ -148,7 +149,8 @@
             <section id="contactMobile">
                 <h5>Contactez-moi !</h5>
             <p>Vous avez une question ou une proposition ? Discutons-en !</p>
-            <form action="#" method="post" class="contact-form">
+            <form method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="3ba43cdd-433d-4930-ade3-2cd6963d332e">
                 <div class="form-group">
                     <label for="name">Nom:</label>
                     <input type="text" name="name" id="name">
@@ -167,6 +169,7 @@
                 </div>
                 <input type="submit" value="Envoyer">
                 </form>
+                <div id="notification" class="notification"></div>
             </section>
         </div>
     </div>
