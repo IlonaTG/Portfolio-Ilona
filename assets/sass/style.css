@@ -699,7 +699,7 @@ header .right .logo img {
     display: none;
   }
 }
-#contact h5 {
+#contact h6 {
   color: black;
   font-size: 28px;
   font-weight: bold;
@@ -825,7 +825,7 @@ header .right .logo img {
     justify-content: center;
     align-items: center;
   }
-  #contactMobile h5 {
+  #contactMobile h6 {
     color: black;
     font-size: 28px;
     font-weight: bold;
