@@ -50,7 +50,7 @@
           "image": "./assets/images/sophie-bluel.webp",
           "imageModal": ["./assets/images/logosDev/logoHTML.png", "./assets/images/logosDev/logoCSS.png", "./assets/images/logosDev/logoJS.png ", "./assets/images/logosDev/logoNode.png", "./assets/images/logosDev/logoAPI.png", "./assets/images/logosDev/logoFigma.png", "./assets/images/logosDev/logoResponsive.png", "./assets/images/logosDev/logoGitHub.png " ],
           "imageModalAlt": "Logos Languages",
-          "link": "lien_vers_le_projet3",
+          "link": "lien_vers_le_projet_SophieBluel",
           "linkGithub": "https://github.com/IlonaTG/P6.git",
           "categories": ["html-css", "js"]
       },
@@ -105,7 +105,7 @@
           "image": "./assets/images/argentbank.webp",
           "imageModal": ["./assets/images/logosDev/logoHTML.png", "./assets/images/logosDev/logoCSS.png", "./assets/images/logosDev/logoJS.png ", "./assets/images/logosDev/logoReact.png ", "./assets/images/logosDev/logoRedux.png", "./assets/images/logosDev/logoAPI.png", "./assets/images/logosDev/logoSwagger.png", "./assets/images/logosDev/logoSASS.png", "./assets/images/logosDev/logoResponsive.png", "./assets/images/logosDev/logoGitHub.png" ],
           "imageModalAlt": "Logos Languages",
-          "link": "lien_vers_le_projet6",
+          "link": "lien_vers_le_projet_ArgentBank",
           "linkGithub": "https://github.com/IlonaTG/Projet11-ArgentBank-website.git",
           "categories": ["html-css", "react", "redux"]
       }
