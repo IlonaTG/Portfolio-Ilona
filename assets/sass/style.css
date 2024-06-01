@@ -347,12 +347,12 @@ footer .footer-bottom p {
   from {
     opacity: 0;
     transform: translateY(-40px);
+  }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-}
 #portfolio .projects-container .image-container {
   position: relative;
   overflow: hidden;
@@ -521,7 +521,7 @@ header .left .apropos-text h1 {
 }
 @media (max-width: 768px) {
   header .left .apropos-text h1 {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 header .left .apropos-text h2 {
