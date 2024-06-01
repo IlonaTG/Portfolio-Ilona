@@ -120,6 +120,7 @@ h1, h2, h3, h4, h5, span {
     background-color: #566270;
     padding-left: 0px;
     margin: 0;
+    font-size: 15px;
   }
   .top-header .nav ul li {
     padding-inline: 0;
